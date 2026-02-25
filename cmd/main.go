@@ -27,10 +27,6 @@ func main() {
 	authn.Register(app)
 	tasks.Register(app)
 
-	users.RegisterService(app)
-	authn.RegisterService(app)
-	tasks.RegisterService(app)
-
 	app.Invoke(migrate)
 	app.Run()
 }
