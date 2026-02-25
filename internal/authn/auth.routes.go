@@ -1,4 +1,4 @@
-package auth_domain
+package authn
 
 import "github.com/gin-gonic/gin"
 

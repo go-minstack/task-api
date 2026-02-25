@@ -1,11 +1,11 @@
-package auth_domain
+package authn
 
 import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-minstack/web"
-	auth_dto "task-api/internal/auth/dto"
+	authn_dto "task-api/internal/authn/dto"
 	"task-api/internal/users/dto"
 )
 
@@ -28,5 +28,5 @@ func (c *AuthController) login(ctx *gin.Context) {
 		ctx.JSON(http.StatusUnauthorized, web.NewErrorDto(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, auth_dto.TokenDto{Token: token})
+	ctx.JSON(http.StatusOK, authn_dto.TokenDto{Token: token})
 }
