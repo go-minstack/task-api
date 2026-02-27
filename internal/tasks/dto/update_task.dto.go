@@ -1,4 +1,4 @@
-package dto
+package task_dto
 
 type UpdateTaskDto struct {
 	Title       string `json:"title"`

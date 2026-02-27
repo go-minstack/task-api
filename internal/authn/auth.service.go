@@ -20,7 +20,7 @@ func NewAuthService(users *user_repos.UserRepository, jwt *auth.JwtService) *Aut
 	return &AuthService{users: users, jwt: jwt}
 }
 
-func (s *AuthService) Login(input dto.LoginDto) (string, error) {
+func (s *AuthService) Login(input user_dto.LoginDto) (string, error) {
 	user, err := s.users.FindByEmail(input.Email)
 	if err != nil {
 		return "", errors.New("invalid credentials")

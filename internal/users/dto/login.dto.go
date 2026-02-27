@@ -1,4 +1,4 @@
-package dto
+package user_dto
 
 type LoginDto struct {
 	Email    string `json:"email"    binding:"required,email"`

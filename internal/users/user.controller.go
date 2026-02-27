@@ -19,7 +19,7 @@ func NewUserController(service *UserService) *UserController {
 }
 
 func (c *UserController) register(ctx *gin.Context) {
-	var input dto.RegisterDto
+	var input user_dto.RegisterDto
 	if err := ctx.ShouldBindJSON(&input); err != nil {
 		ctx.JSON(http.StatusBadRequest, web.NewErrorDto(err))
 		return

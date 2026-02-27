@@ -1,4 +1,4 @@
-package dto
+package task_dto
 
 import task_entities "task-api/internal/tasks/entities"
 

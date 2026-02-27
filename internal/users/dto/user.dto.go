@@ -1,4 +1,4 @@
-package dto
+package user_dto
 
 import user_entities "task-api/internal/users/entities"
 

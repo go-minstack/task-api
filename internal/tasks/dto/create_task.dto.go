@@ -1,4 +1,4 @@
-package dto
+package task_dto
 
 type CreateTaskDto struct {
 	Title       string `json:"title"       binding:"required"`

@@ -30,7 +30,7 @@ func (c *TaskController) list(ctx *gin.Context) {
 }
 
 func (c *TaskController) create(ctx *gin.Context) {
-	var input dto.CreateTaskDto
+	var input task_dto.CreateTaskDto
 	if err := ctx.ShouldBindJSON(&input); err != nil {
 		ctx.JSON(http.StatusBadRequest, web.NewErrorDto(err))
 		return
@@ -69,7 +69,7 @@ func (c *TaskController) update(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, web.NewErrorDto(err))
 		return
 	}
-	var input dto.UpdateTaskDto
+	var input task_dto.UpdateTaskDto
 	if err := ctx.ShouldBindJSON(&input); err != nil {
 		ctx.JSON(http.StatusBadRequest, web.NewErrorDto(err))
 		return

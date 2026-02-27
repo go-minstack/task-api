@@ -15,7 +15,7 @@ func NewUserService(users *user_repos.UserRepository) *UserService {
 	return &UserService{users: users}
 }
 
-func (s *UserService) Register(input dto.RegisterDto) (*dto.UserDto, error) {
+func (s *UserService) Register(input user_dto.RegisterDto) (*user_dto.UserDto, error) {
 	hash, err := bcrypt.GenerateFromPassword([]byte(input.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return nil, err
@@ -30,15 +30,15 @@ func (s *UserService) Register(input dto.RegisterDto) (*dto.UserDto, error) {
 		return nil, err
 	}
 
-	result := dto.NewUserDto(user)
+	result := user_dto.NewUserDto(user)
 	return &result, nil
 }
 
-func (s *UserService) Me(id uint) (*dto.UserDto, error) {
+func (s *UserService) Me(id uint) (*user_dto.UserDto, error) {
 	user, err := s.users.FindByID(id)
 	if err != nil {
 		return nil, err
 	}
-	result := dto.NewUserDto(user)
+	result := user_dto.NewUserDto(user)
 	return &result, nil
 }
