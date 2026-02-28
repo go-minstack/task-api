@@ -53,11 +53,7 @@ func (c *TaskController) get(ctx *gin.Context) {
 	claims, _ := auth.ClaimsFromContext(ctx)
 	task, err := c.service.Get(claims, id)
 	if err != nil {
-		status := http.StatusNotFound
-		if err.Error() == "forbidden" {
-			status = http.StatusForbidden
-		}
-		ctx.JSON(status, web.NewErrorDto(err))
+		ctx.JSON(http.StatusNotFound, web.NewErrorDto(err))
 		return
 	}
 	ctx.JSON(http.StatusOK, task)
@@ -77,11 +73,7 @@ func (c *TaskController) update(ctx *gin.Context) {
 	claims, _ := auth.ClaimsFromContext(ctx)
 	task, err := c.service.Update(claims, id, input)
 	if err != nil {
-		status := http.StatusInternalServerError
-		if err.Error() == "forbidden" {
-			status = http.StatusForbidden
-		}
-		ctx.JSON(status, web.NewErrorDto(err))
+		ctx.JSON(http.StatusNotFound, web.NewErrorDto(err))
 		return
 	}
 	ctx.JSON(http.StatusOK, task)
@@ -95,11 +87,7 @@ func (c *TaskController) delete(ctx *gin.Context) {
 	}
 	claims, _ := auth.ClaimsFromContext(ctx)
 	if err := c.service.Delete(claims, id); err != nil {
-		status := http.StatusNotFound
-		if err.Error() == "forbidden" {
-			status = http.StatusForbidden
-		}
-		ctx.JSON(status, web.NewErrorDto(err))
+		ctx.JSON(http.StatusNotFound, web.NewErrorDto(err))
 		return
 	}
 	ctx.Status(http.StatusNoContent)

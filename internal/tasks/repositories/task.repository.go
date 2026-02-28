@@ -17,3 +17,7 @@ func NewTaskRepository(db *gorm.DB) *TaskRepository {
 func (r *TaskRepository) FindByUserID(userID uint) ([]task_entities.Task, error) {
 	return r.FindAll(repository.Where("user_id = ?", userID))
 }
+
+func (r *TaskRepository) FindByIDAndUserID(id, userID uint) (*task_entities.Task, error) {
+	return r.FindOne(repository.Where("id = ? AND user_id = ?", id, userID))
+}
