@@ -1,9 +1,9 @@
 package user_repositories
 
 import (
-	"github.com/go-minstack/repository"
-	user_entities "task-api/internal/users/entities"
+	"github.com/go-minstack/go-minstack/repository"
 	"gorm.io/gorm"
+	user_entities "task-api/internal/users/entities"
 )
 
 type UserRepository struct {

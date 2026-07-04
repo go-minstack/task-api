@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/go-minstack/auth"
+	"github.com/go-minstack/go-minstack/auth"
 	"golang.org/x/crypto/bcrypt"
 	"task-api/internal/users/dto"
 	user_repos "task-api/internal/users/repositories"

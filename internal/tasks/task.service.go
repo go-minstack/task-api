@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/go-minstack/auth"
+	"github.com/go-minstack/go-minstack/auth"
 	"task-api/internal/tasks/dto"
 	task_entities "task-api/internal/tasks/entities"
 	task_repos "task-api/internal/tasks/repositories"

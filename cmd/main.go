@@ -1,16 +1,16 @@
 package main
 
 import (
-	"github.com/go-minstack/auth"
-	"github.com/go-minstack/core"
-	mgin "github.com/go-minstack/gin"
-	"github.com/go-minstack/sqlite"
+	"github.com/go-minstack/go-minstack/auth"
+	"github.com/go-minstack/go-minstack/core"
+	mgin "github.com/go-minstack/go-minstack/gin"
+	"github.com/go-minstack/go-minstack/sqlite"
+	"gorm.io/gorm"
 	"task-api/internal/authn"
 	"task-api/internal/tasks"
 	task_entities "task-api/internal/tasks/entities"
 	"task-api/internal/users"
 	user_entities "task-api/internal/users/entities"
-	"gorm.io/gorm"
 )
 
 func migrate(db *gorm.DB) error {

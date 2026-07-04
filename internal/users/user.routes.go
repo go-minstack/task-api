@@ -2,7 +2,7 @@ package users
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-minstack/auth"
+	"github.com/go-minstack/go-minstack/auth"
 )
 
 func RegisterRoutes(r *gin.Engine, c *UserController, jwt *auth.JwtService) {

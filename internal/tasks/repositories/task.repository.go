@@ -1,9 +1,9 @@
 package task_repositories
 
 import (
-	"github.com/go-minstack/repository"
-	task_entities "task-api/internal/tasks/entities"
+	"github.com/go-minstack/go-minstack/repository"
 	"gorm.io/gorm"
+	task_entities "task-api/internal/tasks/entities"
 )
 
 type TaskRepository struct {
